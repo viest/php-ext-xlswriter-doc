@@ -3,8 +3,12 @@
 ## **函数原型**
 
 ```php
-checkoutSheet(string $sheetName);
+checkoutSheet(string $sheetName): self
+
+activateSheet(string $sheetName): bool
 ```
+
+> `checkoutSheet` 用于切换当前写入工作表；`activateSheet` 用于设置打开 xlsx 时 Excel 默认展示的工作表，仅影响视图，不改变写入目标。
 
 ## **实例**
 

@@ -1,12 +1,12 @@
-# 检查工作表是否存在
+# Check whether a worksheet exists
 
-## 函数原型
+## Function Prototype
 
 ```php
 existSheet(string $sheetName): bool
 ```
 
-## 示例
+## Example
 
 ```php
 $config = ['path' => './tests'];
@@ -14,14 +14,14 @@ $config = ['path' => './tests'];
 $fileObject = new \Vtiful\Kernel\Excel($config);
 
 $fileObject->fileName('tutorial.xlsx')
-    // 添加工作表 twoSheet
+    // add a worksheet named twoSheet
     ->addSheet('twoSheet');
 
 var_dump($fileObject->existSheet('twoSheet'));
 var_dump($fileObject->existSheet('notFoundSheet'));
 ```
 
-## 示例输出
+## Example output
 
 ```php
 bool(true)

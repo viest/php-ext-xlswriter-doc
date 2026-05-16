@@ -36,7 +36,10 @@ showComment(): self
 > - `y_scale` _double_ —— 纵向缩放比例
 > - `width` _double_ —— 批注框宽度（像素）
 > - `height` _double_ —— 批注框高度（像素）
-> - `visible` _int_ —— 是否默认显示，1 显示 / 0 隐藏
+> - `visible` _int_ —— 批注显示模式，推荐使用以下常量：
+>     - `Excel::COMMENT_DISPLAY_DEFAULT` —— 跟随工作簿全局开关
+>     - `Excel::COMMENT_DISPLAY_HIDDEN`  —— 仅悬停时显示
+>     - `Excel::COMMENT_DISPLAY_VISIBLE` —— 始终常驻显示
 > - `start_row` _int_ —— 批注框起始行
 > - `start_col` _int_ —— 批注框起始列
 
@@ -64,7 +67,7 @@ $file->insertText(1, 0, 'viest')
          'color'     => \Vtiful\Kernel\Format::COLOR_YELLOW,
          'width'     => 200,
          'height'    => 80,
-         'visible'   => 1,
+         'visible'   => \Vtiful\Kernel\Excel::COMMENT_DISPLAY_VISIBLE,
      ])
      ->showComment()
      ->output();

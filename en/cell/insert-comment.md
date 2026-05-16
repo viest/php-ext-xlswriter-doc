@@ -36,7 +36,10 @@ showComment(): self
 > - `y_scale` _double_ — vertical scale factor
 > - `width` _double_ — box width in pixels
 > - `height` _double_ — box height in pixels
-> - `visible` _int_ — visible by default, 1 = shown / 0 = hidden
+> - `visible` _int_ — comment display mode. Prefer the class constants below over raw integers:
+>     - `Excel::COMMENT_DISPLAY_DEFAULT` — follow the workbook-wide default
+>     - `Excel::COMMENT_DISPLAY_HIDDEN`  — only shown on hover
+>     - `Excel::COMMENT_DISPLAY_VISIBLE` — always pinned open
 > - `start_row` _int_ — anchor row of the box
 > - `start_col` _int_ — anchor column of the box
 
@@ -64,7 +67,7 @@ $file->insertText(1, 0, 'viest')
          'color'     => \Vtiful\Kernel\Format::COLOR_YELLOW,
          'width'     => 200,
          'height'    => 80,
-         'visible'   => 1,
+         'visible'   => \Vtiful\Kernel\Excel::COMMENT_DISPLAY_VISIBLE,
      ])
      ->showComment()
      ->output();

@@ -3,8 +3,12 @@
 ### **Function Prototype**
 
 ```php
-checkoutSheet(string $sheetName);
+checkoutSheet(string $sheetName): self
+
+activateSheet(string $sheetName): bool
 ```
+
+> `checkoutSheet` makes a sheet the current write target. `activateSheet` marks a sheet as the one Excel opens by default when the workbook is loaded — this is purely cosmetic and doesn't change the write target.
 
 ### **Instance**
 
